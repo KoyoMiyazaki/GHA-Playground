@@ -15,12 +15,11 @@ jobs:
 
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
-        if : ${{ env.CURRENT_DAY_OF_WEEK < 6 }}
+        if : ${{ env.CURRENT_DAY_OF_WEEK >= 6 }}
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_USERNAME: GitHub Actions
           SLACK_COLOR: success
           SLACK_MESSAGE: |
-            *${{ github.event.issue.title}}*
-            ${{ github.event.issue.html_url }}
-          SLACK_TITLE: Issue Created
+            PR opened!!
+          SLACK_TITLE: PR Created
