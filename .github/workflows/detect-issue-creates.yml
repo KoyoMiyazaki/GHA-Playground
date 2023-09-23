@@ -1,0 +1,14 @@
+name: Detect issue creates
+on: issues
+jobs:
+  detect-issue-creates:
+    name: Detect issue creates
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_USERNAME: GitHub Actions
+          SLACK_ICON_EMOJI: ":github:"
+          SLACK_COLOR: success
