@@ -1,5 +1,8 @@
 name: Detect issue creates
-on: issues
+on:
+  issues:
+    types: [opened]
+
 jobs:
   detect-issue-creates:
     name: Detect issue creates
@@ -12,5 +15,6 @@ jobs:
           SLACK_USERNAME: GitHub Actions
           SLACK_COLOR: success
           SLACK_MESSAGE: |
-            (${{ github.event.issue.title}})[${{ github.event.issue.url }}] が作成されました
+            *${{ github.event.issue.title}}*
+            ${{ github.event.issue.url }}
           SLACK_TITLE: Issue Created
