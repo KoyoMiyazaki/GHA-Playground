@@ -16,5 +16,5 @@ jobs:
           SLACK_COLOR: success
           SLACK_MESSAGE: |
             *${{ github.event.issue.title}}*
-            ${{ github.event.issue.url }}
+            ${{ github.event.issue.html_url }}
           SLACK_TITLE: Issue Created
