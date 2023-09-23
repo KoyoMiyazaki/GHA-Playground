@@ -10,5 +10,7 @@ jobs:
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_USERNAME: GitHub Actions
-          SLACK_ICON_EMOJI: ":github:"
           SLACK_COLOR: success
+          SLACK_MESSAGE: |
+            (${{ github.event.issue.title}})[${{ github.event.issue.url }}] が作成されました
+          SLACK_TITLE: Issue Created
